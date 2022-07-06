@@ -1,0 +1,58 @@
+body {
+    background-color: gray;
+    color: #C97D60;
+}
+
+img {
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}
+
+.container {
+    padding: 20px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr 0.7fr;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Photo design design"
+        "Nom Présentation bouton"
+        ". Présentation Contact";
+    background-color: #63372C;
+}
+
+.Présentation {
+    margin-left: 5%;
+    margin-right: 5%;
+    grid-area: Présentation;
+}
+
+.Photo {
+    text-align: end;
+    grid-area: Photo;
+}
+
+.Nom {
+    text-align: end;
+    grid-area: Nom;
+}
+
+.Contact {
+    grid-area: Contact;
+}
+
+.bouton {
+    grid-area: bouton;
+}
+
+.design {
+    grid-area: design;
+}
