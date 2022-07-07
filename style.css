@@ -1,7 +1,11 @@
 body {
-    background-color: #730800;
+    
     color: #C97D60;
     font-family: "Aclonica",sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #C97D60, #730800);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
 .icon {
