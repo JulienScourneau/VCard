@@ -1,11 +1,99 @@
 body {
   font-family: "Lato", sans-serif;
-  background: linear-gradient(-45deg, #ee7752, #920606, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ee7752, #920606, #09526d, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
-  color: white;
+  color: #ecf0f1;
   font-weight: bold;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  grid-template-rows: 0.4fr 2.2fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". Card ."
+    ". . .";
+}
+
+.Card {
+  display: grid;
+  grid-template-columns: 0.9fr 2fr 0.9fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Photo job job"
+    "Name Description-text ."
+    ". Description-text Contact-zone";
+  grid-area: Card;
+  background-color: #293847;
+  filter: drop-shadow(5px 5px 10px #000);
+  border-radius: 0px 150px 0px 150px;
+}
+
+.Photo {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: Photo;
+}
+
+.img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.Name {
+  text-align: end;
+  padding-right: 12%;
+  font-size: 150%;
+  grid-area: Name;
+}
+
+.Description-text {
+  padding-left: 4%;
+  padding-right: 4%;
+  grid-area: Description-text;
+}
+
+.Contact {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  grid-area: Contact-zone;
+  
+}
+.contact_text{
+  margin-left:5%;
+}
+
+.Contact ul{
+  list-style: none;
+  text-align: left;
+  font-size: 75%;
+  margin: 0;
+  padding: 0;
+  padding-left: 8%;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-end;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
 
 @keyframes gradient {
   0% {
@@ -61,15 +149,17 @@ body {
 }
 
 .job {
+  display: flex;
   overflow: hidden;
-  background-color: orange;
   flex-direction: column;
+  align-self: center;
   font-weight: 600;
   grid-area: job;
   font-size: 35px;
   line-height: 40px;
+  width: 75%;
   color: #ecf0f1;
-  border-radius: 0px 150px 0px 0px;
+
 }
 
 .job_content {
@@ -98,10 +188,10 @@ body {
   font-size: 42px;
   line-height: 40px;
   -webkit-animation-name: opacity;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 6s;
   -webkit-animation-iteration-count: infinite;
   animation-name: opacity;
-  animation-duration: 2s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
 }
 
@@ -124,79 +214,4 @@ body {
 .item {
   line-height: 40px;
   margin: 0;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 0.8fr 1.4fr 0.8fr;
-  grid-template-rows: 0.4fr 2.2fr 0.4fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". Card ."
-    ". . .";
-}
-
-.Card {
-  display: grid;
-  grid-template-columns: 0.9fr 1.2fr 0.9fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Photo job job"
-    "Name Description-text ."
-    ". Description-text Contact-zone";
-  grid-area: Card;
-  background-color: #000;
-  filter: drop-shadow(5px 5px 10px #000);
-  border-radius: 0px 150px 0px 150px;
-}
-
-.Photo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aliceblue;
-  grid-area: Photo;
-
-}
-
-.img {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-}
-
-.Name {
-  text-align: end;
-  padding-right: 12%;
-  background-color: red;
-  grid-area: Name;
-}
-
-.Description-text {
-  padding-left: 4%;
-  padding-right: 4%;
-  background-color: blue;
-  grid-area: Description-text;
-}
-
-.Contact-zone {
-  position: relative;
-  background-color: hotpink;
-  grid-area: Contact-zone
-}
-
-.logo {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
 }
