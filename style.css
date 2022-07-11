@@ -1,80 +1,202 @@
 body {
-    
-    color: #C97D60;
-    font-family: "Aclonica",sans-serif;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #C97D60, #730800);
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(-45deg, #ee7752, #920606, #23a6d5, #23d5ab);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  height: 100vh;
+  animation: gradient 30s ease infinite;
+  color: white;
+  font-weight: bold;
 }
 
-.icon {
-    width: 2em;
-    object-fit: fill;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.row {
-    display: flex;
+@-webkit-keyframes opacity {
+
+  0%,
+  100% {
+    opacity: 0;
   }
-  
-  .column {
-    flex: 33.33%;
-    padding: 5px;
+
+  50% {
+    opacity: 1;
   }
+}
+
+@keyframes change {
+
+  0%,
+  25%,
+  50% {
+    transform: translate3d(0, +20%, 0);
+  }
+
+  50%,
+  75% {
+    transform: translate3d(0, -250%, 0);
+  }
+
+}
+
+@keyframes opacity {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.job {
+  overflow: hidden;
+  background-color: orange;
+  flex-direction: column;
+  font-weight: 600;
+  grid-area: job;
+  font-size: 35px;
+  line-height: 40px;
+  color: #ecf0f1;
+  border-radius: 0px 150px 0px 0px;
+}
+
+.job_content {
+  display: flex;
+  font-weight: 600;
+  overflow: hidden;
+  height: 50px;
+}
+
+.job_content::before {
+  content: "[";
+  left: 0;
+}
+
+.job_content::after {
+  content: "]";
+  position: relative;
+  right: 0;
+}
+
+.job_content::before,
+.job_content::after {
+  position: relative;
+  top: 0;
+  color: #16a085;
+  font-size: 42px;
+  line-height: 40px;
+  -webkit-animation-name: opacity;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: opacity;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.job_text {
+  display: inline;
+  float: left;
+  margin: 0;
+}
+
+.item_list {
+  margin-top: 0;
+  padding-left: 5%;
+  text-align: left;
+  list-style: none;
+  animation-name: change;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+.item {
+  line-height: 40px;
+  margin: 0;
+}
 
 .container {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: grid;
-    grid-template-columns: 0.7fr 1.3fr 0.7fr;
-    grid-template-rows: 0.5fr 0.8fr 0.9fr;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "Photo design design"
-        "Nom Présentation bouton"
-        ". Présentation Contact";
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  grid-template-rows: 0.4fr 2.2fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". Card ."
+    ". . .";
 }
 
-.Présentation {
-    margin-left: 5%;
-    margin-right: 5%;
-    grid-area: Présentation;
+.Card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr 0.9fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Photo job job"
+    "Name Description-text ."
+    ". Description-text Contact-zone";
+  grid-area: Card;
+  background-color: #000;
+  filter: drop-shadow(5px 5px 10px #000);
+  border-radius: 0px 150px 0px 150px;
 }
 
 .Photo {
-    text-align: end;
-    grid-area: Photo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  grid-area: Photo;
+
 }
 
-.Photo>img {
-    border-radius: 50%;
+.img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
 }
 
-.Nom {
-    margin-top: 10%;
-    margin-right: 10%;
-    font-size: 160%;
-    text-align: end;
-    grid-area: Nom;
+.Name {
+  text-align: end;
+  padding-right: 12%;
+  background-color: red;
+  grid-area: Name;
 }
 
-
-.Contact {
-    grid-area: Contact;
+.Description-text {
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: blue;
+  grid-area: Description-text;
 }
 
-.bouton {
-    grid-area: bouton;
+.Contact-zone {
+  position: relative;
+  background-color: hotpink;
+  grid-area: Contact-zone
 }
 
-.design {
-    grid-area: design;
+.logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
-.column{
-    float: left;
-}
-
-.row {
-    clear: both;
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
